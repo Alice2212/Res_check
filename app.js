@@ -9,13 +9,13 @@ var mongoose = require('mongoose');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users/user');
+var usersRouter = require('./routes/users');
 
 
 var app = express();
 
 //connecting to database 
-mongoose.connect('mongodb://localhost/resultchecker', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/resultchecker', {useNewUrlParser: true},()=>console.log("connected to db"));
 
 
 // view engine setup
