@@ -36,7 +36,7 @@ exports.loginPage = (req, res) =>{
 // }
 
 exports.loginResult = (req,res)=>{
-    user.findByUsername(username, function(user,result){
+    user.findUserByUsername(username, function(user,result){
         if(!user){
             res.flash('User not Found')
             res.redirect('/')
