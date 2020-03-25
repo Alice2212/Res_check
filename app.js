@@ -7,17 +7,11 @@ var mongoose = require('mongoose');
 var flash = require('flash-express')
 // var flash = require('flash-connect');
 
-
-
-
-// var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/index');
-
-
 var app = express();
 
 //connecting to database 
-mongoose.connect('mongodb://localhost/resultchecker', {useNewUrlParser: true},()=>console.log("connected to db"));
+mongoose.connect('mongodb://localhost/resultchecker', 
+{useNewUrlParser: true},()=>console.log("connected to db"));
 
 
 // view engine setup
