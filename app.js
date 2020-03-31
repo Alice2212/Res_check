@@ -7,17 +7,11 @@ var mongoose = require('mongoose');
 var flash = require('flash-express')
 // var flash = require('flash-connect');
 
-
-
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-
 var app = express();
 
 //connecting to database 
-mongoose.connect('mongodb://localhost/resultchecker', {useNewUrlParser: true},()=>console.log("connected to db"));
+mongoose.connect('mongodb://localhost/resultchecker', 
+{useNewUrlParser: true},()=>console.log("connected to db"));
 
 
 // view engine setup
@@ -31,8 +25,8 @@ app.use(cookieParser());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
 
 // catch 404 and forward to error handler
