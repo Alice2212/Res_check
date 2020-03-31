@@ -6,7 +6,7 @@ var userController = require ('../controller/user');
 router.get('/', userController.loginPage);
 
 //on clicking login to retrieve the user info
-router.get('/Result', userController.loginResult)
+router.get('/result', userController.loginResult)
 
 //exporting the router
 module.exports = router;
