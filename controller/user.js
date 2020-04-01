@@ -7,8 +7,9 @@ exports.loginPage = (req, res) =>{
 }
 
 
+
 exports.loginResult = (req,res) => {
-    user.find({name: user.username})
+    User.find({name: User.username})
  .then((doc)=>{
     console.log(doc);
     res.json(doc);
@@ -18,7 +19,6 @@ exports.loginResult = (req,res) => {
     res.flash ('User not found')
     res.render('/users')
 });
-
 }
 
 
