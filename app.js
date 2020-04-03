@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-var flash = require('flash-express')
+var flash = require('flash-express');
+var passport = require('passport')
 // var flash = require('flash-connect');
 
 var app = express();
@@ -24,6 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
